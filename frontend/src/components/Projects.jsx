@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Box, Typography, IconButton, getToggleButtonGroupUtilityClass } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { fontFamily, brandColors } from '/src/styles/theme';
 import ProjectCard from './ProjectCard';
 
 const VISIBLE = 3;
@@ -39,7 +40,7 @@ const projectsStyles = {
         fontSize: '1.7rem',
         letterSpacing: '0.1em',
         textTransform: 'uppercase',
-        fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif',
+        fontFamily,
         color: '#1a1a1a',
         lineHeight: `${TITLE_LINE_HEIGHT_PX}px`
     },
@@ -57,9 +58,9 @@ const projectsStyles = {
         transform: 'translateY(-50%)',
         left: -20,
         zIndex: 2,
-        color: '#b00000',
+        color: brandColors.red,
         background: '#fff',
-        '&:hover': { backgroundColor: 'transparent', color: '#7a0000' }
+        '&:hover': { backgroundColor: 'transparent', color: brandColors.redDark }
     },
     arrowNext: {
         position: 'absolute',
@@ -67,9 +68,9 @@ const projectsStyles = {
         transform: 'translateY(-50%)',
         right: -20,
         zIndex: 2,
+        color: brandColors.red,
         background: '#fff',
-        color: '#b00000',
-        '&:hover': { backgroundColor: 'transparent', color: '#7a0000' }
+        '&:hover': { backgroundColor: 'transparent', color: brandColors.redDark }
     }
 };
 
