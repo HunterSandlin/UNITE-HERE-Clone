@@ -1,4 +1,6 @@
 import { Box, Typography } from '@mui/material';
+import { fontFamily, brandColors } from 'src/styles/theme';
+import { alpha } from '@mui/material/styles';
 
 const cardStyles = {
     root: {
@@ -19,7 +21,7 @@ const cardStyles = {
         bottom: 0,
         left: 0,
         right: 0,
-        backgroundColor: 'rgba(205, 14, 17, 0.8)',
+        backgroundColor: alpha(brandColors.redLight, 0.8),
         paddingLeft: '16px',
         paddingRight: '16px',
         paddingTop: '14px',
@@ -31,6 +33,7 @@ const cardStyles = {
         fontSize: '1.05rem',
         letterSpacing: '0.05em',
         textTransform: 'uppercase',
+        fontFamily,
         lineHeight: 1.5,
         display: 'inline',
         borderBottom: '4px solid #000000',
