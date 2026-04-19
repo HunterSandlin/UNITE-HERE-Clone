@@ -1,0 +1,40 @@
+{
+    "whoWeAre": {
+        "label": "Who We Are",
+        "affiliatesAndLocals": "Affiliates & Locals",
+        "industries": "Industries",
+        "leadership": "Leadership",
+        "history": "History",
+        "globalPartnerships": "Global Partnerships"
+    },
+    "projects": {
+        "label": "Projects",
+        "airlineCatering": "Airline Catering: It's Our Turn",
+        "buildingPower": "Building Power in the Hotel Industry",
+        "inhospitable": "Inhospitable: How U.S. Immigration Policy is Harming the Hospitality Sector",
+        "immigration": "UNITE HERE Immigration",
+        "fairHotel": "FairHotel",
+        "electoralPolitics": "UNITE HERE Electoral Politics"
+    },
+    "changingLives": {
+        "label": "Changing Lives",
+        "healthAndSafety": "Health & Safety",
+        "wagesAndBenefits": "Wages & Benefits",
+        "equityAndCivilRights": "Equity & Civil Rights"
+    },
+    "resources": {
+        "label": "Resources",
+        "forRetirees": "For Retirees",
+        "fairHotelGuide": "FairHotel Union Hotel Guide",
+        "store": "UNITE HERE Store",
+        "jobsAndInternships": "UNITE HERE Jobs & Internships"
+    },
+    "organizeAUnion": {
+        "label": "Organize a Union"
+    },
+    "newsroom": {
+        "label": "Newsroom",
+        "pressReleases": "Press Releases",
+        "pressMentions": "Press Mentions"
+    }
+}

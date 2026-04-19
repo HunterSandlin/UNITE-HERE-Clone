@@ -1,14 +1,24 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+// EN Imports
 import enNavbar from './locales/en/navbar.json';
+import enCommon from './locales/en/common.json';
+import enFooter from './locales/en/footer.json';
+// ES Imports
 import esNavbar from './locales/es/navbar.json';
+import esCommon from './locales/es/common.json';
+import esFooter from './locales/es/footer.json';
 
 const resources = {
     en: {
-        navbar: enNavbar
+        common: enCommon,
+        navbar: enNavbar,
+        footer: enFooter
     },
     es: {
-        navbar: esNavbar
+        common: esCommon,
+        navbar: esNavbar,
+        footer: esFooter
     }
 };
 
