@@ -1,0 +1,13 @@
+/* File for absolute paths in imports editor support.
+ *  vite config enables absolute paths, this file
+ *  allows VSCode to include IntelliSense, autocomplete,
+ *  go-to-definition, refactoring, linting, and error highlighting.
+ */
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["./src/*"]
+        }
+    }
+}
