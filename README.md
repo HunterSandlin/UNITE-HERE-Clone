@@ -1,6 +1,16 @@
 # UNITE HERE! — Website Clone
 
-A personal project recreating the [UNITE HERE!](https://unitehere.org) union website. Built with Django and React. It's pretty similar to the original site but if you alt+tab between the two you can tell it's a little uncanny. I tried to stay pretty true to the original though! No affiliation with UNITE HERE!, I just like what they do.
+A personal project recreating the [UNITE HERE!](https://unitehere.org) union website. Built with Django and React. It's pretty similar to the original site but if you alt+tab between the two you can tell it's a little uncanny. I tried to stay pretty true to the original though! **No affiliation with UNITE HERE!**, I just like what they do! This is just a personal project for fun and solidarity.
+
+Think of this is a shallow copy, it is the main page (well, it will be). Links just redirect to the same site with the path in the URL for future expansion. There were a few liberties taken. Video walkthrough of the tech stack on the way!
+
+### Offical UNITE HERE! website
+
+![UNITE HERE! website](/readme/real_unite_here.png)
+
+### Unoffical clone using React!
+
+![Clone of UNITE HERE! website with React](/readme/react_unite_here.png)
 
 ---
 
