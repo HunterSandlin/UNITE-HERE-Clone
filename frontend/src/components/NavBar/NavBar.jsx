@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { navData } from '../mockAPI/navData';
+import { useState, useRef } from 'react';
+import { navData, secondaryNavData } from './navData';
+import { useTranslation } from 'react-i18next';
 
 import {
     AppBar,
@@ -101,13 +102,6 @@ const NavDropdown = ({ label, href, submenu }) => {
     );
 };
 
-const secondaryMenuItems = [
-    { label: 'DONATE', href: '/donate' },
-    { label: 'SUBSCRIBE TO UPDATES', href: '/subscribe' },
-    { label: 'CONTACT US', href: '/contact-us' },
-    { label: 'ESPAÑOL', href: '/espanol' }
-];
-
 const socialLinks = [
     { icon: <FacebookRoundedIcon />, href: 'https://facebook.com/unitehere', label: 'Facebook' },
     { icon: <XIcon />, href: 'https://x.com/unitehere', label: 'X (Twitter)' },
@@ -179,6 +173,7 @@ const styles = {
     secondaryButton: {
         color: '#1e1b1bff',
         fontWeight: 900,
+        textTransform: 'uppercase',
         fontSize: '0.77em',
         '&:hover': {
             color: '#ffd700',
@@ -199,7 +194,7 @@ const styles = {
         color: '#fff',
         fontWeight: 700,
         fontSize: '0.855rem',
-        textTransform: 'none',
+        textTransform: 'uppercase',
         px: 2,
         minWidth: 'auto',
         '&:hover': {
@@ -234,16 +229,11 @@ const styles = {
 
 const NavBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [mainMenuItems, setMainMenuItems] = useState([]);
-
-    // Get Nav Data (currently using mockAPI, might switch to API or i18)
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setMainMenuItems(navData);
-        }, 0);
-
-        return () => clearTimeout(timer);
-    }, []);
+    const { t, i18n } = useTranslation('navbar');
+    const isSpanish = i18n.language === 'es';
+    const handleLanguageToggle = () => {
+        i18n.changeLanguage(isSpanish ? 'en' : 'es');
+    };
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -258,7 +248,7 @@ const NavBar = () => {
             </Box>
 
             <List sx={styles.drawerList}>
-                {mainMenuItems.map((item) => (
+                {navData.map((item) => (
                     <ListItemButton
                         key={item.href}
                         component="a"
@@ -298,15 +288,24 @@ const NavBar = () => {
                             {/* Secondary menu */}
                             <Box sx={styles.secondaryRow}>
                                 <Stack direction="row" spacing={1}>
-                                    {secondaryMenuItems.map((item) => (
+                                    {secondaryNavData.map((item) => (
                                         <Button
                                             key={item.href}
                                             component="a"
                                             href={item.href}
                                             sx={styles.secondaryButton}>
-                                            {item.label}
+                                            {t(item.labelKey)}
                                         </Button>
                                     ))}
+
+                                    {/* Language toggle — separate from nav links */}
+                                    <Button
+                                        onClick={handleLanguageToggle}
+                                        sx={styles.secondaryButton}>
+                                        {isSpanish
+                                            ? t('secondary.switchToEnglish')
+                                            : t('secondary.switchToSpanish')}
+                                    </Button>
                                 </Stack>
 
                                 {/* Social Media Icons */}
@@ -328,7 +327,7 @@ const NavBar = () => {
 
                             {/* Main navigation */}
                             <Box sx={styles.mainRow}>
-                                {mainMenuItems.map((item, index) => {
+                                {navData.map((item, index) => {
                                     // Special case: search icon (from mock API)
                                     if (item.iconKey) {
                                         const IconComponent = iconMap[item.iconKey];
@@ -348,9 +347,12 @@ const NavBar = () => {
                                         return (
                                             <NavDropdown
                                                 key={item.href || index}
-                                                label={item.label}
+                                                label={t(item.label)}
                                                 href={item.href}
-                                                submenu={item.submenu}
+                                                submenu={item.submenu.map((sub) => ({
+                                                    ...sub,
+                                                    label: t(sub.label)
+                                                }))}
                                             />
                                         );
                                     }
@@ -362,7 +364,7 @@ const NavBar = () => {
                                             component="a"
                                             href={item.href}
                                             sx={styles.mainNavButton}>
-                                            {item.label}
+                                            {t(item.label)}
                                         </Button>
                                     );
                                 })}
