@@ -36,5 +36,10 @@
         "label": "Newsroom",
         "pressReleases": "Press Releases",
         "pressMentions": "Press Mentions"
+    },
+    "newsletter": {
+        "title": "Stay Up to\nDate",
+        "description": "Get updates on UNITE HERE campaigns, actions, and more right to your inbox.",
+        "button": "Subscribe Today"
     }
 }
