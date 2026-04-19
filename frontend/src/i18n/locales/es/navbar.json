@@ -1,0 +1,47 @@
+{
+    "whoWeAre": {
+        "label": "Quiénes Somos",
+        "affiliatesAndLocals": "Afiliados y Locales",
+        "industries": "Industrias",
+        "leadership": "Liderazgo",
+        "history": "Historia",
+        "globalPartnerships": "Alianzas Globales"
+    },
+    "projects": {
+        "label": "Proyectos",
+        "airlineCatering": "Catering Aéreo: Es Nuestro Turno",
+        "buildingPower": "Construyendo Poder en la Industria Hotelera",
+        "inhospitable": "Inhóspito: Cómo la Política de Inmigración de EE.UU. está Dañando al Sector de la Hospitalidad",
+        "immigration": "Inmigración de UNITE HERE",
+        "fairHotel": "FairHotel",
+        "electoralPolitics": "Política Electoral de UNITE HERE"
+    },
+    "changingLives": {
+        "label": "Cambiando Vidas",
+        "healthAndSafety": "Salud y Seguridad",
+        "wagesAndBenefits": "Salarios y Beneficios",
+        "equityAndCivilRights": "Equidad y Derechos Civiles"
+    },
+    "resources": {
+        "label": "Recursos",
+        "forRetirees": "Para Jubilados",
+        "fairHotelGuide": "Guía de Hoteles Sindicalizados FairHotel",
+        "store": "Tienda de UNITE HERE",
+        "jobsAndInternships": "Empleos y Prácticas en UNITE HERE"
+    },
+    "organizeAUnion": {
+        "label": "Organizar un Sindicato"
+    },
+    "newsroom": {
+        "label": "Sala de Prensa",
+        "pressReleases": "Comunicados de Prensa",
+        "pressMentions": "Menciones en la Prensa"
+    },
+    "secondary": {
+        "donate": "Donar",
+        "subscribeToUpdates": "Suscribirse a las Actualizaciones",
+        "contactUs": "Contáctenos",
+        "switchToSpanish": "Español",
+        "switchToEnglish": "English"
+    }
+}
