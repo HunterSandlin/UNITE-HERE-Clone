@@ -1,4 +1,5 @@
 import { Box, Typography, Container } from '@mui/material';
+import { fontFamily, brandColors } from 'src/styles/theme';
 
 const HEADLINE_LINE_HEIGHT_PX = {
     xs: 48,
@@ -21,7 +22,7 @@ const heroStyles = {
         overflow: 'hidden',
         lineHeight: 0,
         minHeight: { xs: 280, md: 420 },
-        bgcolor: '#b00000'
+        bgcolor: brandColors.red
     },
     image: {
         width: '100%',
@@ -63,7 +64,7 @@ const heroStyles = {
         position: 'absolute',
         left: 0,
         right: 0,
-        bgcolor: '#cd0e11',
+        bgcolor: brandColors.redLight,
         bottom: {
             xs: `${RECT_BOTTOM_OFFSET.xs}px`,
             md: `${RECT_BOTTOM_OFFSET.md}px`
@@ -82,7 +83,7 @@ const heroStyles = {
         fontSize: { xs: '2.4rem', sm: '3.2rem', md: '4.2rem' },
         lineHeight: 1,
         letterSpacing: '-0.5px',
-        fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif',
+        fontFamily,
         display: 'block',
         px: { xs: 1.5, md: 2 },
         whiteSpace: 'nowrap'
@@ -104,7 +105,7 @@ const heroStyles = {
     ctaText: {
         position: 'relative',
         padding: '0px 20px 0px 20px',
-        color: '#cd0e11',
+        color: brandColors.redLight,
         fontWeight: 900,
         fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.6rem' },
         lineHeight: 1.25,
