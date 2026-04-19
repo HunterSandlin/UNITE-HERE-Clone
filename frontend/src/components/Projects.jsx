@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { fontFamily, brandColors } from '/src/styles/theme';
 import ProjectCard from './ProjectCard';
+import { useTranslation } from 'react-i18next';
 
 const VISIBLE = 3;
 const GAP = 5;
@@ -86,6 +87,7 @@ const SectionTitle = ({ children }) => (
 const Projects = ({ projects = DEFAULT_PROJECTS }) => {
     const [startIndex, setStartIndex] = useState(0);
     const count = projects.length;
+    const { t: tCommon } = useTranslation('common');
 
     const prev = () => setStartIndex((i) => (i - 1 + count) % count);
     const next = () => setStartIndex((i) => (i + 1) % count);
@@ -97,7 +99,7 @@ const Projects = ({ projects = DEFAULT_PROJECTS }) => {
 
     return (
         <Box sx={projectsStyles.root}>
-            <SectionTitle>Projects</SectionTitle>
+            <SectionTitle>{tCommon('projects.label')}</SectionTitle>
 
             <Box sx={projectsStyles.carouselWrapper}>
                 <IconButton
@@ -123,32 +125,32 @@ const Projects = ({ projects = DEFAULT_PROJECTS }) => {
 
 const DEFAULT_PROJECTS = [
     {
-        title: "Airline Catering: It's Our Turn",
+        label: 'airlineCatering',
         image: 'https://unitehere.org/wp-content/uploads/its-our-turn.jpg',
         href: '/project/airline-catering'
     },
     {
-        title: 'Building Power in the Hotel Industry',
+        label: 'buildingPower',
         image: 'https://unitehere.org/wp-content/uploads/hotel-strikes-cover.jpg',
         href: '/project/building-power-in-the-hotel-industry'
     },
     {
-        title: 'Inhospitable: How U.S. Immigration Policy is Harming the Hospitality Sector',
+        label: 'inhospitable',
         image: 'https://unitehere.org/wp-content/uploads/inhospitable.jpg',
         href: '/project/inhospitable'
     },
     {
-        title: 'UNITE HERE Immigration',
+        label: 'immigration',
         image: 'https://unitehere.org/wp-content/uploads/immigration-campaign.jpg',
         href: '/project/immigration'
     },
     {
-        title: 'FairHotel',
+        label: 'fairHotel',
         image: 'https://unitehere.org/wp-content/uploads/FairHotel-Campaign-Graphic.jpg',
         href: '/project/fairhotel'
     },
     {
-        title: 'UNITE HERE Electoral Politics',
+        label: 'electoralPolitics',
         image: 'https://unitehere.org/wp-content/uploads/workers-vote-1.jpg',
         href: '/project/electoral-politics'
     }

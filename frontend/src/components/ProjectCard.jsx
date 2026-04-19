@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { fontFamily, brandColors } from 'src/styles/theme';
 import { alpha } from '@mui/material/styles';
+import { useTranslation } from 'react-i18next';
 
 const cardStyles = {
     root: {
@@ -42,20 +43,24 @@ const cardStyles = {
     }
 };
 
-const ProjectCard = ({ title, image, href }) => (
-    <Box
-        component="a"
-        href={href}
-        sx={{
-            ...cardStyles.root,
-            backgroundImage: `url(${image})`
-        }}>
-        <Box sx={cardStyles.titleBar}>
-            <Typography component="span" sx={cardStyles.titleText}>
-                {title}
-            </Typography>
+const ProjectCard = ({ label, image, href }) => {
+    const { t: tCommon } = useTranslation('common');
+
+    return (
+        <Box
+            component="a"
+            href={href}
+            sx={{
+                ...cardStyles.root,
+                backgroundImage: `url(${image})`
+            }}>
+            <Box sx={cardStyles.titleBar}>
+                <Typography component="span" sx={cardStyles.titleText}>
+                    {tCommon(`projects.${label}`)}
+                </Typography>
+            </Box>
         </Box>
-    </Box>
-);
+    );
+};
 
 export default ProjectCard;
