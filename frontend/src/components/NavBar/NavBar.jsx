@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { navData, secondaryNavData } from './navData';
 import { useTranslation } from 'react-i18next';
+import { hoverTransition, fontFamily, brandColors } from 'src/styles/theme';
 
 import {
     AppBar,
@@ -25,13 +26,11 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import SearchIcon from '@mui/icons-material/Search';
-
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-// Maps icon names from API to MUI icons
 const iconMap = {
     search: <SearchIcon />
 };
@@ -43,7 +42,7 @@ const navDropdownStyles = {
         alignItems: 'center'
     },
     paper: {
-        bgcolor: '#b00000',
+        bgcolor: brandColors.red,
         color: '#fff',
         boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
         minWidth: 260,
@@ -54,9 +53,10 @@ const navDropdownStyles = {
         fontSize: '0.855rem',
         py: 1.8,
         px: 3,
+        ...hoverTransition,
         '&:hover': {
-            bgcolor: 'rgba(255,255,255,0.15)',
-            color: '#ffd700'
+            ...hoverTransition['&:hover'],
+            bgcolor: 'rgba(255,255,255,0.15)'
         }
     }
 };
@@ -111,11 +111,11 @@ const socialLinks = [
 
 const styles = {
     appBar: {
-        background: 'linear-gradient(90deg, #cd0e11 0%, #a6090b 100%)',
+        background: `linear-gradient(90deg, ${brandColors.redLight} 0%, ${brandColors.redDark} 100%)`,
         color: '#fff',
         boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
         lineHeight: 1,
-        fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif'
+        fontFamily
     },
     toolbar: {
         minHeight: 128,
@@ -175,8 +175,9 @@ const styles = {
         fontWeight: 900,
         textTransform: 'uppercase',
         fontSize: '0.77em',
+        ...hoverTransition,
         '&:hover': {
-            color: '#ffd700',
+            ...hoverTransition['&:hover'],
             backgroundColor: 'transparent'
         }
     },
@@ -185,8 +186,9 @@ const styles = {
     },
     socialIconButton: {
         color: '#fff',
+        ...hoverTransition,
         '&:hover': {
-            color: '#ffd700',
+            ...hoverTransition['&:hover'],
             transform: 'scale(1.1)'
         }
     },
@@ -197,15 +199,16 @@ const styles = {
         textTransform: 'uppercase',
         px: 2,
         minWidth: 'auto',
+        ...hoverTransition,
         '&:hover': {
-            color: '#ffd700',
+            ...hoverTransition['&:hover'],
             backgroundColor: 'transparent'
         }
     },
     drawerBox: {
         width: 280,
         pt: 2,
-        bgcolor: '#b00000'
+        bgcolor: brandColors.red
     },
     drawerCloseBox: {
         display: 'flex',
@@ -229,8 +232,10 @@ const styles = {
 
 const NavBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const { t, i18n } = useTranslation('navbar');
+    const { t, i18n } = useTranslation('common');
+    const { t: tNavbar } = useTranslation('navbar');
     const isSpanish = i18n.language === 'es';
+
     const handleLanguageToggle = () => {
         i18n.changeLanguage(isSpanish ? 'en' : 'es');
     };
@@ -267,7 +272,6 @@ const NavBar = () => {
             <AppBar position="sticky" sx={styles.appBar}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters sx={styles.toolbar}>
-                        {/* Logo */}
                         <Box component="a" href="/" sx={styles.logoBox}>
                             <Typography variant="h3" component="span" sx={styles.uniteTypography}>
                                 UNITE
@@ -283,9 +287,7 @@ const NavBar = () => {
                             </Typography>
                         </Box>
 
-                        {/* Menus */}
                         <Box sx={styles.rightColumn}>
-                            {/* Secondary menu */}
                             <Box sx={styles.secondaryRow}>
                                 <Stack direction="row" spacing={1}>
                                     {secondaryNavData.map((item) => (
@@ -294,21 +296,18 @@ const NavBar = () => {
                                             component="a"
                                             href={item.href}
                                             sx={styles.secondaryButton}>
-                                            {t(item.labelKey)}
+                                            {tNavbar(item.labelKey)}
                                         </Button>
                                     ))}
-
-                                    {/* Language toggle — separate from nav links */}
                                     <Button
                                         onClick={handleLanguageToggle}
                                         sx={styles.secondaryButton}>
                                         {isSpanish
-                                            ? t('secondary.switchToEnglish')
-                                            : t('secondary.switchToSpanish')}
+                                            ? tNavbar('secondary.switchToEnglish')
+                                            : tNavbar('secondary.switchToSpanish')}
                                     </Button>
                                 </Stack>
 
-                                {/* Social Media Icons */}
                                 <Stack direction="row" sx={styles.socialStack}>
                                     {socialLinks.map((social) => (
                                         <IconButton
@@ -325,10 +324,8 @@ const NavBar = () => {
                                 </Stack>
                             </Box>
 
-                            {/* Main navigation */}
                             <Box sx={styles.mainRow}>
                                 {navData.map((item, index) => {
-                                    // Special case: search icon (from mock API)
                                     if (item.iconKey) {
                                         const IconComponent = iconMap[item.iconKey];
                                         return (
@@ -342,7 +339,6 @@ const NavBar = () => {
                                         );
                                     }
 
-                                    // Dropdown item
                                     if (item.submenu) {
                                         return (
                                             <NavDropdown
@@ -357,7 +353,6 @@ const NavBar = () => {
                                         );
                                     }
 
-                                    // Regular button
                                     return (
                                         <Button
                                             key={item.href || index}
@@ -371,7 +366,6 @@ const NavBar = () => {
                             </Box>
                         </Box>
 
-                        {/* Mobile Hamburger */}
                         <IconButton
                             color="inherit"
                             aria-label="open drawer"
@@ -384,7 +378,6 @@ const NavBar = () => {
                 </Container>
             </AppBar>
 
-            {/* Mobile Drawer */}
             <Drawer
                 anchor="right"
                 open={mobileOpen}
