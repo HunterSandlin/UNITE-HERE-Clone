@@ -20,7 +20,9 @@
         "label": "Changing Lives",
         "healthAndSafety": "Health & Safety",
         "wagesAndBenefits": "Wages & Benefits",
-        "equityAndCivilRights": "Equity & Civil Rights"
+        "equityAndCivilRights": "Equity & Civil Rights",
+        "description": "UNITE HERE is a movement of people committed to changing lives in the hospitality industry by making sure our jobs are safe, respected, and provide enough to live on.",
+        "learnMore": "Learn More"
     },
     "resources": {
         "label": "Resources",
@@ -38,7 +40,7 @@
         "pressMentions": "Press Mentions"
     },
     "newsletter": {
-        "title": "Stay Up to\nDate",
+        "title": "Stay Up to Date",
         "description": "Get updates on UNITE HERE campaigns, actions, and more right to your inbox.",
         "button": "Subscribe Today"
     }
