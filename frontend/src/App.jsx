@@ -1,3 +1,6 @@
+import { Box } from '@mui/material';
+import { dividerStyles } from './styles/layout';
+
 import NavBar from './components/NavBar/NavBar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -10,6 +13,8 @@ function App() {
             <NavBar />
             <Hero />
             <Projects />
+            {/* Divider */}
+            <Box sx={dividerStyles} />
             <Banner />
             <Footer />
         </>
