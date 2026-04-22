@@ -75,17 +75,18 @@ const footerStyles = {
     mainSection: {
         paddingTop: '4.5rem',
         paddingBottom: '2.5rem',
-        paddingLeft: '4rem',
-        paddingRight: '2rem'
+        paddingLeft: { xs: '1.5rem', md: '4rem' },
+        paddingRight: { xs: '1.5rem', md: '2rem' }
     },
     innerGrid: {
         display: 'flex',
-        gap: 0,
+        flexDirection: { xs: 'column', md: 'row' },
+        gap: { xs: '2rem', md: 0 },
         alignItems: 'flex-start'
     },
     logoBlock: {
         flexShrink: 0,
-        paddingRight: '1.5rem',
+        paddingRight: { xs: 0, md: '1.5rem' },
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start'
@@ -129,6 +130,7 @@ const footerStyles = {
         marginBottom: '1.25rem'
     },
     verticalDivider: {
+        display: { xs: 'none', md: 'block' },
         width: '2px',
         backgroundColor: '#fff',
         alignSelf: 'stretch',
@@ -139,11 +141,13 @@ const footerStyles = {
     navColumnsBlock: {
         display: 'flex',
         flex: 1,
-        gap: '0.5rem'
+        flexWrap: 'wrap',
+        gap: '10px',
+        minWidth: '100px'
     },
     navColumn: {
         flex: 1,
-        minWidth: 0
+        minWidth: '10rem'
     },
     navColumnHeader: {
         fontWeight: 900,
@@ -164,7 +168,7 @@ const footerStyles = {
     },
     followBlock: {
         flexShrink: 0,
-        paddingLeft: '2rem',
+        paddingLeft: { xs: 0, md: '2rem' },
         minWidth: '145px'
     },
     followHeader: {
@@ -189,13 +193,14 @@ const footerStyles = {
     horizontalDivider: {
         borderColor: 'rgba(0,0,0,0.25)',
         borderBottomWidth: '1px',
-        marginLeft: '50px',
-        marginRight: '50px'
+        marginLeft: { xs: '1.5rem', md: '50px' },
+        marginRight: { xs: '1.5rem', md: '50px' }
     },
     bottomSection: {
-        paddingTop: '3rem',
+        paddingTop: '1.5rem',
         paddingBottom: '1.5rem',
-        paddingLeft: '4rem'
+        paddingLeft: { xs: '1.5rem', md: '4rem' },
+        paddingRight: { xs: '1.5rem', md: '2rem' }
     },
     disclaimer: {
         fontSize: '0.95rem',
@@ -205,7 +210,8 @@ const footerStyles = {
     bottomLinks: {
         display: 'flex',
         flexWrap: 'wrap',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: { xs: '0.25rem', md: 0 }
     },
     bottomLink: {
         color: '#fff',
@@ -217,7 +223,8 @@ const footerStyles = {
         color: 'rgba(255,255,255,0.5)',
         marginLeft: '0.5rem',
         marginRight: '0.5rem',
-        fontSize: '0.95rem'
+        fontSize: '0.95rem',
+        display: { xs: 'none', md: 'inline' }
     }
 };
 
