@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "title": "Thompson Hospitality Workers at Virginia State University and Norfolk State University Unionize with UNITE HERE",
+        "href": "/press-releases/thompson-hospitality-workers-virginia-state-norfolk-state",
+        "image": "https://unitehere.org/wp-content/uploads/unitehere-share-250x131.png",
+        "type": "Press Releases",
+        "date": "April 21, 2026",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "title": "New Orleans Hospitality Workers Continue Protest Omni Convention Hotel Project",
+        "href": "/press-releases/new-orleans-hospitality-workers-continue-protest-omni-convention-hotel-project",
+        "image": "https://unitehere.org/wp-content/uploads/l23.jpg",
+        "type": "Press Releases",
+        "date": "April 13, 2026",
+        "featured": false
+    },
+    {
+        "id": 3,
+        "title": "Historic immigration decline could damage the hotel industry",
+        "href": "https://www.travelweekly.com/Travel-News/Hotel-News/Historic-immigration-decline-could-damage-hotel-industry",
+        "image": null,
+        "type": "Press Mentions",
+        "typePrefix": "Travel News",
+        "date": "April 7, 2026",
+        "featured": false
+    },
+    {
+        "id": 4,
+        "title": "ICE Out Action at PHL Airport",
+        "href": "/ice-out-action-at-phl-airport",
+        "image": "https://unitehere.org/wp-content/uploads/phl.jpg",
+        "type": "Posts",
+        "date": "April 6, 2026",
+        "featured": false
+    },
+    {
+        "id": 5,
+        "title": "UNITE HERE Locals Join Nationwide No Kings Protest",
+        "href": "/unite-here-locals-join-nationwide-no-kings-protest",
+        "image": "https://unitehere.org/wp-content/uploads/nokings.gif",
+        "type": "Posts",
+        "date": "April 6, 2026",
+        "featured": false
+    }
+]
