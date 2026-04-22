@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import ChangingLives from './components/ChangingLives';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
+import RecentNews from './components/RecentNews';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             <ChangingLives />
             {/* Divider */}
             <Box sx={dividerStyles} />
+            <RecentNews />
             <Banner />
             <Footer />
         </>
