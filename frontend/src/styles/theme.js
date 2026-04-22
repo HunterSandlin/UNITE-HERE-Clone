@@ -8,7 +8,8 @@ export const fontFamily = 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sa
 export const brandColors = {
     red: '#b00000',
     redLight: '#cd0e11',
-    redDark: '#a6090b'
+    redDark: '#a6090b',
+    backgroundGrey: '#EAECED'
 };
 
 export const textColors = {
