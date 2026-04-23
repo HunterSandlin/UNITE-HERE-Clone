@@ -1,12 +1,4 @@
 {
-    "whoWeAre": {
-        "label": "Quiénes Somos",
-        "affiliatesAndLocals": "Afiliados y Locales",
-        "industries": "Industrias",
-        "leadership": "Liderazgo",
-        "history": "Historia",
-        "globalPartnerships": "Alianzas Globales"
-    },
     "projects": {
         "label": "Proyectos",
         "airlineCatering": "Catering Aéreo: Es Nuestro Turno",

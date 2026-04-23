@@ -1,1 +1,59 @@
-{}
+{
+    "whoWeAre": {
+        "label": "Quiénes Somos",
+        "affiliatesAndLocals": "Afiliados y Sindicatos Locales",
+        "industries": "Industrias",
+        "leadership": "Liderazgo",
+        "history": "Historia",
+        "globalPartnerships": "Alianzas Globales"
+    },
+    "projects": {
+        "label": "Proyectos",
+        "airlineCatering": "Catering de Aerolíneas: Es Nuestro Turno",
+        "buildingPower": "Construyendo Poder en la Industria Hotelera",
+        "inhospitable": "Inhóspito: Cómo la Política de Inmigración de EE. UU. Daña al Sector de la Hospitalidad",
+        "immigration": "Inmigración UNITE HERE",
+        "fairHotel": "FairHotel",
+        "electoralPolitics": "Política Electoral de UNITE HERE"
+    },
+    "changingLives": {
+        "label": "Cambiando Vidas",
+        "healthAndSafety": "Salud y Seguridad",
+        "wagesAndBenefits": "Salarios y Beneficios",
+        "equityAndCivilRights": "Equidad y Derechos Civiles",
+        "description": "UNITE HERE es un movimiento de personas comprometidas a cambiar vidas en la industria de la hospitalidad, asegurándose de que nuestros trabajos sean seguros, respetados y proporcionen lo suficiente para vivir.",
+        "learnMore": "Más Información"
+    },
+    "resources": {
+        "label": "Recursos",
+        "forRetirees": "Para Jubilados",
+        "fairHotelGuide": "Guía de Hoteles de la Unión FairHotel",
+        "store": "Tienda de UNITE HERE",
+        "jobsAndInternships": "Empleos y Pasantías de UNITE HERE"
+    },
+    "organizeAUnion": {
+        "label": "Organizar un Sindicato"
+    },
+    "newsroom": {
+        "label": "Sala de Prensa",
+        "pressReleases": "Comunicados de Prensa",
+        "pressMentions": "Menciones en la Prensa"
+    },
+    "newsletter": {
+        "title": "Manténgase al Día",
+        "description": "Reciba actualizaciones sobre las campañas, acciones y más de UNITE HERE directamente en su bandeja de entrada.",
+        "button": "Suscríbase Hoy"
+    },
+    "findAffiliate": {
+        "title": "Encuentre su Afiliado de UNITE HERE",
+        "description": "UNITE HERE representa a trabajadores en todo Estados Unidos y Canadá.",
+        "stateLabel": "Buscar un Local por Estado/Provincia",
+        "cityLabel": "Buscar Local o Ciudad",
+        "searchPlaceholder": "Ingrese palabras clave"
+    },
+    "hero": {
+        "headline1": "Un trabajo debería",
+        "headline2": "ser suficiente",
+        "ctaText": "Únase a la unión\nque lucha por \nnuestras familias."
+    }
+}
