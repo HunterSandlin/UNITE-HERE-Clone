@@ -1,5 +1,6 @@
 import { Box, Typography, Container } from '@mui/material';
 import { fontFamily, brandColors } from 'src/styles/theme';
+import { useTranslation } from 'react-i18next';
 
 const HEADLINE_LINE_HEIGHT_PX = {
     xs: 48,
@@ -123,13 +124,9 @@ const HeadlineLine = ({ text }) => (
     </Box>
 );
 
-const HeroSection = ({
-    imageSrc = '/hero/hero-11.jpg',
-    imageAlt = 'UNITE HERE workers',
-    headlineLines = ['One job should', 'be enough—'],
-    ctaText = "Join the union\nthat's fighting for\nour families.",
-    ctaHref = '/organize-a-union'
-}) => {
+const Hero = ({ imageSrc = '/hero/hero-11.jpg', imageAlt = 'UNITE HERE workers' }) => {
+    const { t: tCommon } = useTranslation('common');
+
     return (
         <Box sx={heroStyles.root}>
             <Box
@@ -145,15 +142,14 @@ const HeroSection = ({
             <Box sx={heroStyles.overlayContainer}>
                 <Container maxWidth="xl" sx={heroStyles.innerContainer}>
                     <Box sx={heroStyles.headlineWrapper}>
-                        {headlineLines.map((line, i) => (
-                            <HeadlineLine key={i} text={line} />
-                        ))}
+                        <HeadlineLine text={tCommon('hero.headline1')} />
+                        <HeadlineLine text={tCommon('hero.headline2')} />
                     </Box>
 
                     <Box sx={heroStyles.ctaWrapper}>
                         <Box sx={heroStyles.ctaRect} />
-                        <Typography href={ctaHref} sx={heroStyles.ctaText}>
-                            {ctaText}
+                        <Typography href="/organize-a-union" sx={heroStyles.ctaText}>
+                            {tCommon('hero.ctaText')}
                         </Typography>
                     </Box>
                 </Container>
@@ -162,4 +158,4 @@ const HeroSection = ({
     );
 };
 
-export default HeroSection;
+export default Hero;
