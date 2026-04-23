@@ -50,5 +50,10 @@
         "stateLabel": "Find a Local by State/ Province",
         "cityLabel": "Find Local or City",
         "searchPlaceholder": "Enter keywords"
+    },
+    "hero": {
+        "headline1": "One job should",
+        "headline2": "be enough—",
+        "ctaText": "Join the union\nthat's fighting for\nour families."
     }
 }
