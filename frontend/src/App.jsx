@@ -2,13 +2,13 @@ import { Box } from '@mui/material';
 import { dividerStyles } from './styles/layout';
 
 import NavBar from 'src/components/NavBar/NavBar';
-import Hero from 'src/components/Hero';
-import Projects from 'src/components/Projects';
-import ChangingLives from 'src/components/ChangingLives';
-import Banner from 'src/components/Banner';
-import Footer from 'src/components/Footer';
-import RecentNews from 'src/components/RecentNews';
-import FindAffiliate from 'src/components/FindAffiliate';
+import Hero from 'src/components/Hero/Hero';
+import Projects from 'src/components/Projects/Projects';
+import ChangingLives from 'src/components/ChangingLives/ChangingLives';
+import Banner from 'src/components/Banner/Banner';
+import Footer from 'src/components/Footer/Footer';
+import RecentNews from 'src/components/RecentNews/RecentNews';
+import FindAffiliate from 'src/components/FindAffiliate/FindAffiliate';
 
 function App() {
     return (

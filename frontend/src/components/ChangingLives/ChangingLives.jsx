@@ -4,7 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useTranslation } from 'react-i18next';
 import { fontFamily, brandColors, textColors } from 'src/styles/theme';
-import Card from './Card';
+import Card from 'src/components/Card/Card';
 
 const VISIBLE = 3;
 const GAP = 5;
