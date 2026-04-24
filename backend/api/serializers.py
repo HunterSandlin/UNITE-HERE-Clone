@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from .models import NewsArticle
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)
@@ -15,3 +16,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+    
+class NewsArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model  = NewsArticle
+        fields = [
+            'id', 'title', 'href', 'image',
+            'type', 'type_prefix', 'featured',
+            'published'
+        ]
