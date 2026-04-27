@@ -232,7 +232,7 @@ const styles = {
 
 const NavBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const { t, i18n } = useTranslation('common');
+    const { t: tCommon, i18n } = useTranslation('common');
     const { t: tNavbar } = useTranslation('navbar');
     const isSpanish = i18n.language === 'es';
 
@@ -243,29 +243,6 @@ const NavBar = () => {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-
-    const drawer = (
-        <Box sx={styles.drawerBox} role="presentation">
-            <Box sx={styles.drawerCloseBox}>
-                <IconButton onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
-                    <CloseIcon />
-                </IconButton>
-            </Box>
-
-            <List sx={styles.drawerList}>
-                {navData.map((item) => (
-                    <ListItemButton
-                        key={item.href}
-                        component="a"
-                        href={item.href}
-                        onClick={handleDrawerToggle}
-                        sx={styles.drawerListItemButton}>
-                        <ListItemText primary={item.label} />
-                    </ListItemButton>
-                ))}
-            </List>
-        </Box>
-    );
 
     return (
         <>
@@ -349,11 +326,11 @@ const NavBar = () => {
                                         return (
                                             <NavDropdown
                                                 key={item.href || index}
-                                                label={t(item.label)}
+                                                label={tCommon(item.label)}
                                                 href={item.href}
                                                 submenu={item.submenu.map((sub) => ({
                                                     ...sub,
-                                                    label: t(sub.label)
+                                                    label: tCommon(sub.label)
                                                 }))}
                                             />
                                         );
@@ -366,7 +343,7 @@ const NavBar = () => {
                                             component="a"
                                             href={item.href}
                                             sx={styles.mainNavButton}>
-                                            {t(item.label)}
+                                            {tCommon(item.label)}
                                         </Button>
                                     );
                                 })}
@@ -387,12 +364,27 @@ const NavBar = () => {
             </AppBar>
 
             {/* Mobile Drawer */}
-            <Drawer
-                anchor="right"
-                open={mobileOpen}
-                onClose={handleDrawerToggle}
-                ModalProps={{ keepMounted: true }}>
-                {drawer}
+            <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+                <Box sx={styles.drawerBox} role="presentation">
+                    <Box sx={styles.drawerCloseBox}>
+                        <IconButton onClick={handleDrawerToggle} sx={{ color: '#fff' }}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Box>
+
+                    <List sx={styles.drawerList}>
+                        {navData.map((item) => (
+                            <ListItemButton
+                                key={item.href}
+                                component="a"
+                                href={item.href}
+                                onClick={handleDrawerToggle}
+                                sx={styles.drawerListItemButton}>
+                                <ListItemText primary={tCommon(item.label)} />
+                            </ListItemButton>
+                        ))}
+                    </List>
+                </Box>
             </Drawer>
         </>
     );
