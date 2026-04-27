@@ -8,6 +8,11 @@ export default defineConfig({
             src: '/src'
         }
     },
+    test: {
+        environment: 'jsdom',
+        globals: true,
+        setupFiles: ['./src/test/setup.js']
+    },
     server: {
         proxy: {
             '/api': {
